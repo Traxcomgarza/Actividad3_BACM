@@ -104,11 +104,18 @@ fun CrearTarea(modifier: Modifier = Modifier, eventosViewModel: EventosViewModel
                         Color.White,
                         shape = RoundedCornerShape(4.dp)),
                 colors = TextFieldDefaults.colors(
-                    focusedIndicatorColor = Color.White,
-                    unfocusedIndicatorColor = Color.Gray,
-                    disabledIndicatorColor = Color.Transparent,
-                    unfocusedContainerColor = Color.White,
-                    focusedContainerColor = Color.White
+                    focusedIndicatorColor = Color(0xFF1F1F1F),
+                    unfocusedIndicatorColor = Color(0xFF1F1F1F),
+                    disabledIndicatorColor = Color(0xFF1F1F1F),
+                    focusedContainerColor = Color(0xFF1F1F1F),
+                    unfocusedContainerColor = Color(0xFF1F1F1F),
+                    focusedTextColor = Color.White,
+                    unfocusedTextColor = Color.White,
+                    focusedLabelColor = Color.White,
+                    unfocusedLabelColor = Color.White
+
+
+
                 )
             )
         }
@@ -138,12 +145,12 @@ fun CrearTarea(modifier: Modifier = Modifier, eventosViewModel: EventosViewModel
                     .fillMaxWidth()
                     .height(56.dp),
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = Color.White
+                    containerColor = Color(0xFF1F1F1F)
                 ),
                 shape = RoundedCornerShape(4.dp),
                 contentPadding = PaddingValues(horizontal = 16.dp)
                 ) { Text(
-                color = Color.Black,
+                color = Color.White,
                 text = "Seleccionar fecha: $inputFecha",
                 textAlign = TextAlign.Start,
                 modifier = Modifier.fillMaxWidth()
@@ -167,11 +174,15 @@ fun CrearTarea(modifier: Modifier = Modifier, eventosViewModel: EventosViewModel
                         Color.White,
                         shape = RoundedCornerShape(4.dp)),
                 colors = TextFieldDefaults.colors(
-                    focusedIndicatorColor = Color.White,
-                    unfocusedIndicatorColor = Color.Gray,
-                    disabledIndicatorColor = Color.Transparent,
-                    unfocusedContainerColor = Color.White,
-                    focusedContainerColor = Color.White
+                    focusedIndicatorColor = Color(0xFF1F1F1F),
+                    unfocusedIndicatorColor = Color(0xFF1F1F1F),
+                    disabledIndicatorColor = Color(0xFF1F1F1F),
+                    focusedContainerColor = Color(0xFF1F1F1F),
+                    unfocusedContainerColor = Color(0xFF1F1F1F),
+                    focusedTextColor = Color.White,
+                    unfocusedTextColor = Color.White,
+                    focusedLabelColor = Color.White,
+                    unfocusedLabelColor = Color.White
                 )
             )
         }
@@ -192,11 +203,15 @@ fun CrearTarea(modifier: Modifier = Modifier, eventosViewModel: EventosViewModel
                         Color.White,
                         shape = RoundedCornerShape(4.dp)),
                 colors = TextFieldDefaults.colors(
-                    focusedIndicatorColor = Color.White,
-                    unfocusedIndicatorColor = Color.Gray,
-                    disabledIndicatorColor = Color.Transparent,
-                    unfocusedContainerColor = Color.White,
-                    focusedContainerColor = Color.White
+                    focusedIndicatorColor = Color(0xFF1F1F1F),
+                    unfocusedIndicatorColor = Color(0xFF1F1F1F),
+                    disabledIndicatorColor = Color(0xFF1F1F1F),
+                    focusedContainerColor = Color(0xFF1F1F1F),
+                    unfocusedContainerColor = Color(0xFF1F1F1F),
+                    focusedTextColor = Color.White,
+                    unfocusedTextColor = Color.White,
+                    focusedLabelColor = Color.White,
+                    unfocusedLabelColor = Color.White
                 )
             )
         }
@@ -208,9 +223,7 @@ fun CrearTarea(modifier: Modifier = Modifier, eventosViewModel: EventosViewModel
             Button(
                 modifier = Modifier
                     .fillMaxWidth(),
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = Color(0xFFADD8E6)
-                ),
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF5F5AC9)),
                 shape = RoundedCornerShape(4.dp),
                 onClick = {
                     eventosViewModel.addEvento(

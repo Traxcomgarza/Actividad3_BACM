@@ -10,7 +10,9 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -30,20 +32,33 @@ fun PantallaAddTarea(
 ){
     Scaffold(
         modifier = Modifier.fillMaxSize(),
+        containerColor = Color(0xFF111111),
         bottomBar = {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(8.dp),
+                    .padding(15.dp),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Button(
                     onClick = { navController.navigate("pantallaAddTarea") },
+
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color(0xFF5F5AC9),
+                        contentColor = Color.White
+                    ),
+                    shape = RoundedCornerShape(4.dp)
+
                 ) {
                     Text(text = "Agregar tarea")
                 }
                 Button(
                     onClick = { navController.navigate("pantallaEventos") },
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color(0xFF5F5AC9),
+                        contentColor = Color.White
+                    ),
+                    shape = RoundedCornerShape(4.dp)
                 ) {
                     Text(text = "Ver eventos")
                 }
@@ -60,12 +75,11 @@ fun PantallaAddTarea(
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(Color(0xFFD8E3DF))
                     .padding(16.dp)
             ) {
                 Text(
                     text = "Eventos",
-                    color = Color(0xFF008959),
+                    color = Color.White,
                     fontWeight = FontWeight.Bold,
                     fontSize = 25.sp
                 )

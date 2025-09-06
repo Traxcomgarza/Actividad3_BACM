@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.Scaffold
@@ -37,20 +38,31 @@ fun PantallaEventos(
 ){
     Scaffold(
         modifier = Modifier.fillMaxSize(),
+        containerColor = Color(0xFF111111),
         bottomBar = {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(8.dp),
+                    .padding(15.dp),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Button(
                     onClick = { navController.navigate("pantallaAddTarea") },
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color(0xFF5F5AC9),
+                        contentColor = Color.White
+                    ),
+                    shape = RoundedCornerShape(4.dp)
                 ) {
                     Text(text = "Agregar tarea")
                 }
                 Button(
                     onClick = { navController.navigate("pantallaEventos") },
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color(0xFF5F5AC9),
+                        contentColor = Color.White
+                    ),
+                    shape = RoundedCornerShape(4.dp)
                 ) {
                     Text(text = "Ver eventos")
                 }
@@ -66,12 +78,11 @@ fun PantallaEventos(
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(Color(0xFFD8E3DF))
                     .padding(16.dp)
             ) {
                 Text(
                     text = "Eventos",
-                    color = Color(0xFF008959),
+                    color = Color.White,
                     fontWeight = FontWeight.Bold,
                     fontSize = 25.sp
                 )
@@ -108,6 +119,9 @@ fun PantallaEventos(
                                    .fillMaxWidth()
                                    .padding(8.dp)
                                    .animateContentSize(),
+                               colors = CardDefaults.cardColors(
+                                   containerColor = Color(0xFF1F1F1F)
+                               ),
                                onClick = { expandir = !expandir }
                            ) {
                                Column(
@@ -115,14 +129,15 @@ fun PantallaEventos(
                                ) {
                                    Text(
                                        text = item.titulo,
-                                       fontSize = 20.sp
+                                       fontSize = 20.sp,
+                                       color = Color.White
                                    )
                                 //Aqui se expande y se muestra tod0
                                    if (expandir) {
                                        Spacer(modifier = Modifier.size(8.dp))
-                                       Text(text = "Fecha: ${item.fecha}")
-                                       Text(text = "Prioridad: ${item.prioridad}")
-                                       Text(text = "Descripcion: ${item.descripcion}")
+                                       Text(text = "Fecha: ${item.fecha}", color = Color.White)
+                                       Text(text = "Prioridad: ${item.prioridad}", color = Color.White)
+                                       Text(text = "Descripcion: ${item.descripcion}", color = Color.White)
                                    }
                                }
                            }
