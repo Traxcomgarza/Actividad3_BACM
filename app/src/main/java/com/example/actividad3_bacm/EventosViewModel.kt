@@ -1,9 +1,10 @@
 package com.example.actividad3_bacm
 
 import androidx.compose.runtime.mutableStateListOf
+import androidx.lifecycle.ViewModel
 import java.time.LocalDate
 
-class EventosViewModel {
+class EventosViewModel: ViewModel() {
 
     val eventos = mutableStateListOf<TareasData>()
 
@@ -20,5 +21,10 @@ class EventosViewModel {
             descripcion = descripcion
         )
         eventos.add(nuevoEvento)
+    }
+    //revisar
+    fun deleteEvento(evento:TareasData){
+        eventos.remove(evento)
+
     }
 }

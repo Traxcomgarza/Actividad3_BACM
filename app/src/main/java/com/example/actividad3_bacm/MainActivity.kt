@@ -44,6 +44,8 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.compose.rememberNavController
+import com.example.actividad3_bacm.navigation.AppNav
 import com.example.actividad3_bacm.ui.theme.Actividad3_BACMTheme
 import java.time.LocalDate
 import java.util.Calendar
@@ -55,9 +57,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Actividad3_BACMTheme {
-              //  BarraNavegacion()
                 //para prueba
-                CrearTarea(eventosViewModel = EventosViewModel())
+               // CrearTarea(eventosViewModel = EventosViewModel())
+                val navController = rememberNavController()
+                AppNav(navController = navController)
             }
         }
     }
