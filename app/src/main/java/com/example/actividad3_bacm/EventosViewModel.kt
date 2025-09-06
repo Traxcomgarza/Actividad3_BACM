@@ -13,7 +13,21 @@ class EventosViewModel: ViewModel() {
         fecha: LocalDate,
         prioridad: String,
         descripcion: String
-    ) {//se junta tod0 para hacer solo 1 llamada
+    ): String? {
+        if (titulo.isBlank()) {
+            return "El título no puede estar vacío"
+        }
+
+        val prioridadNum = prioridad.toIntOrNull()
+        //si es nulo o no esta dentro del 1-10
+        if (prioridadNum == null || prioridadNum !in 1..10) {
+            return "La prioridad debe ser un número entre 1 y 10"
+        }
+
+        if (descripcion.isBlank()) {
+            return "La descripción no puede estar vacía"
+        }
+
         val nuevoEvento = TareasData(
             titulo = titulo,
             fecha = fecha,
@@ -21,10 +35,10 @@ class EventosViewModel: ViewModel() {
             descripcion = descripcion
         )
         eventos.add(nuevoEvento)
+        return null //significa que no hay errores
     }
-    //revisar
-    fun deleteEvento(evento:TareasData){
-        eventos.remove(evento)
 
+    fun deleteEvento(evento: TareasData) {
+        eventos.remove(evento)
     }
 }

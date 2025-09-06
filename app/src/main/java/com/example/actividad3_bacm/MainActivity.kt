@@ -226,20 +226,23 @@ fun CrearTarea(modifier: Modifier = Modifier, eventosViewModel: EventosViewModel
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF5F5AC9)),
                 shape = RoundedCornerShape(4.dp),
                 onClick = {
-                    eventosViewModel.addEvento(
+                    val validacion = eventosViewModel.addEvento(
                         inputTitulo,
                         inputFecha,
                         inputPrioridad,
                         inputDescripcion
                     )
-                    //Muestra un mensaje, lo puse porque no queria poner de mas
-                    Toast.makeText(context, "Tarea agregada", Toast.LENGTH_SHORT).show()
+                    if (validacion == null) {
+                        Toast.makeText(context, "Tarea agregada", Toast.LENGTH_SHORT).show()
+                        inputTitulo = ""
+                        inputFecha = LocalDate.now()
+                        inputDescripcion = ""
+                        inputPrioridad = ""
+                    } else {
+                        Toast.makeText(context, validacion, Toast.LENGTH_SHORT).show()
 
-                    inputTitulo = ""
-                    //se reinicia a la actual
-                    inputFecha = LocalDate.now()
-                    inputDescripcion = ""
-                    inputPrioridad = ""
+                    }
+                    //Muestra un mensaje de error si hay uno
                 }
             ){
                 Text("Agregar Evento")
